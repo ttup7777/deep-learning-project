@@ -1,5 +1,4 @@
 
-
 import pandas as pd
 import numpy as np
 np.random.seed(42)
@@ -19,12 +18,12 @@ warnings.filterwarnings('ignore')
 import os
 os.environ['OMP_NUM_THREADS'] = '4'
 
-EMBEDDING_FILE1 = '/Users/yan/Documents/Year1/DeepLearning/glove.6B.200d.txt'
-EMBEDDING_FILE = '/Users/yan/Documents/Year1/DeepLearning/crawl-300d-2M.vec'
+EMBEDDING_FILE1 = '/glove.6B.200d.txt'
+EMBEDDING_FILE = '/crawl-300d-2M.vec'
 
-train = pd.read_csv('/Users/yan/Documents/Year1/DeepLearning/jigsaw-toxic-comment-classification-challenge/train.csv')
-test = pd.read_csv('/Users/yan/Documents/Year1/DeepLearning/jigsaw-toxic-comment-classification-challenge/test.csv')
-submission = pd.read_csv('/Users/yan/Documents/Year1/DeepLearning/sample_submission.csv')
+train = pd.read_csv('/train.csv')
+test = pd.read_csv('/test.csv')
+submission = pd.read_csv('/sample_submission.csv')
 
 X_train = train["comment_text"].fillna("fillna").values
 y_train = train[["toxic", "severe_toxic", "obscene", "threat", "insult", "identity_hate"]].values
